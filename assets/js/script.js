@@ -94,10 +94,11 @@ const renderLista = function () {
       delet.textContent = 'Elimina';
 
       // Appesa Div Button
-      cardButtons.appendChild(delet);
-      cardButtons.appendChild(modify);
-      cardButtons.appendChild(playedStat);
       cardButtons.appendChild(badge);
+      cardButtons.appendChild(playedStat);
+      cardButtons.appendChild(modify);
+      cardButtons.appendChild(delet);
+
       // Appesa Div Scritte
       cardText.appendChild(title);
       cardText.appendChild(info);

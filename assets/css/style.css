@@ -183,7 +183,7 @@ body.darkMode section {
     background-color: rgb(147, 7, 7);
     border: 0.8px solid black;
     box-shadow: 0 1px 1px 0.2px black;
-    width: 90px;
+    width: 7%;
     text-align: center;
     font-size: 0.8rem;
 }
@@ -298,17 +298,46 @@ body.darkMode section {
     border: 1px solid lightgray;
     border-radius: 7px;
     color: lightslategray;
+    text-align: center;
 }
 
 
 .card-gioco {
-    margin: 20px;
+    margin: 20px 20px auto;
+    padding-top: 20px;
+    display: inline-block;
     background-color: rgba(217, 217, 178, 0.239);
     border: 1px solid lightgray;
-    border-radius: 6px;
-    height: 65px;
+    border-radius: 8px;
+    border-left: 5px solid green;
+    height: 10%;
     text-align: left;
     display: inline-block;
-    width: 100%;
+    width: 95%;
 }
 
+.card-gioco div:first-child {
+    text-align: left;
+    margin-left: 20px;
+}
+
+.card-gioco div:last-child {
+    text-align: right;
+    vertical-align: middle;
+    margin-right: 20px;
+}
+
+.card-gioco button {
+    background-color: rgb(147, 7, 7);
+    border: 0.8px solid black;
+    border-radius: 4px;
+    box-shadow: 0 1px 1px 0.2px black;
+    width: 5%;
+    text-align: center;
+    font-size: 0.8rem;
+    display: inline-block;
+}
+
+.card-gioco button:first-child {
+    margin-right: 60px;
+}
