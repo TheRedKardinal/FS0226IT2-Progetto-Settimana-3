@@ -23,28 +23,28 @@ REGOLE
 /* SCRIVI QUI LA TUA RISPOSTA */
 const videogiochi = [
    {
-      id: 0,
       name: 'God of War III',
       console: 'PlayStation',
-      category: 'Azione e Avventura'
+      category: 'Azione e Avventura',
+      isPlayed: 'true'
    },
    {
-      id: 1,
       name: 'MegaMan X4',
       console: 'Multipiattaforma',
-      category: 'Azione e Avventura'
+      category: 'Azione e Avventura',
+      isPlayed: 'true'
    },
    {
-      id: 2,
       name: 'Metal Gear Solid 3 - Snake Eaeter',
       console: 'PlayStation 2',
-      category: 'Stealth'
+      category: 'Stealth',
+      isPlayed: 'true'
    },
    {
-      id: 3,
       name: 'Monster Hunter World',
       console: 'Multipiattaforma',
-      category: 'Gioco di Ruolo'
+      category: 'Gioco di Ruolo',
+      isPlayed: 'true'
    },
 ];
 
@@ -68,20 +68,32 @@ const renderLista = function () {
 
    // Dichiaro forEach 
    videogiochi.forEach(gioco) {
-
       // Creazione Card
       // Div Container
       const cardContainer = document.createElement('div');
+
       // Contenuto card - Scritte
       const cardText = document.createElement('div'); // Appeso
       const title = document.createElement('h4'); // Appeso
       const info = document.createElement('p'); // Appeso
+
       // Contenuto card - Bottoni
       const cardButtons = document.createElement('div'); // Appeso
       const badge = document.createElement('span'); // Appeso
       const playedStat = document.createElement('button'); // Appeso
       const modify = document.createElement('button'); // Appeso
       const delet = document.createElement('button'); // Appeso
+
+      // Classe
+      cardContainer.classList.add('card-gioco');
+
+      // Proprietà da incollare
+      title.textContent = gioco.name;
+      info.textContent = gioco.console + '-' + gioco.category;
+      badge.textContent = '';
+      playedStat.textContent
+      modify.textContent = 'Modifica';
+      delet.textContent = 'Elimina';
 
       // Appesa Div Button
       cardButtons.appendChild(delet);

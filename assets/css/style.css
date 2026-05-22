@@ -301,7 +301,7 @@ body.darkMode section {
 }
 
 
-.lista div:first {
+.card-gioco {
     background-color: rgba(217, 217, 178, 0.239);
     border: 1px solid lightgray;
     border-radius: 6px;
