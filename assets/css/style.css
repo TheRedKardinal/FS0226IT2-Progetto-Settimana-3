@@ -302,6 +302,7 @@ body.darkMode section {
 
 
 .card-gioco {
+    margin: 20px;
     background-color: rgba(217, 217, 178, 0.239);
     border: 1px solid lightgray;
     border-radius: 6px;

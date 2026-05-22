@@ -63,11 +63,11 @@ const videogiochi = [
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 const renderLista = function () {
-   videogameList.querySelector('.lista');
+   const videogameList = document.querySelector('.lista');
    videogameList.innerHTML = '';
 
    // Dichiaro forEach 
-   videogiochi.forEach(gioco) {
+   videogiochi.forEach(function (gioco) {
       // Creazione Card
       // Div Container
       const cardContainer = document.createElement('div');
@@ -90,8 +90,6 @@ const renderLista = function () {
       // Proprietà da incollare
       title.textContent = gioco.name;
       info.textContent = gioco.console + '-' + gioco.category;
-      badge.textContent = '';
-      playedStat.textContent
       modify.textContent = 'Modifica';
       delet.textContent = 'Elimina';
 
@@ -107,8 +105,8 @@ const renderLista = function () {
       cardContainer.appendChild(cardText);
       cardContainer.appendChild(cardButtons);
       // Appesa Div alla Section
-      listaSezione.appendChild(cardContainer);
-   }
+      videogameList.appendChild(cardContainer);
+   });
 
 
 
@@ -118,7 +116,7 @@ const renderLista = function () {
 
 
 }
-
+renderLista();
 /* FORM CON VALIDAZIONE
    addEventListener("submit") sul form.
    event.preventDefault().
