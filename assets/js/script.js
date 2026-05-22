@@ -65,32 +65,38 @@ const videogiochi = [
 const renderLista = function () {
    videogameList.querySelector('.lista');
    videogameList.innerHTML = '';
-   // Div Container
-   const cardContainer = document.createElement('div');
-   // Contenuto card - Scritte
-   const cardText = document.createElement('div'); // Appeso
-   const title = document.createElement('h4'); // Appeso
-   const info = document.createElement('p'); // Appeso
-   // Contenuto card - Bottoni
-   const cardButtons = document.createElement('div'); // Appeso
-   const badge = document.createElement('span'); // Appeso
-   const playedStat = document.createElement('button'); // Appeso
-   const modify = document.createElement('button'); // Appeso
-   const delet = document.createElement('button'); // Appeso
 
-   // Appesa Div Button
-   cardButtons.appendChild(delet);
-   cardButtons.appendChild(modify);
-   cardButtons.appendChild(playedStat);
-   cardButtons.appendChild(badge);
-   // Appesa Div Scritte
-   cardText.appendChild(title);
-   cardText.appendChild(info);
-   // Appesa Div nei Div
-   cardContainer.appendChild(cardText);
-   cardContainer.appendChild(cardButtons);
-   // Appesa Div alla Section
-   listaSezione.appendChild(cardContainer);
+   // Dichiaro forEach 
+   videogiochi.forEach(gioco) {
+
+      // Creazione Card
+      // Div Container
+      const cardContainer = document.createElement('div');
+      // Contenuto card - Scritte
+      const cardText = document.createElement('div'); // Appeso
+      const title = document.createElement('h4'); // Appeso
+      const info = document.createElement('p'); // Appeso
+      // Contenuto card - Bottoni
+      const cardButtons = document.createElement('div'); // Appeso
+      const badge = document.createElement('span'); // Appeso
+      const playedStat = document.createElement('button'); // Appeso
+      const modify = document.createElement('button'); // Appeso
+      const delet = document.createElement('button'); // Appeso
+
+      // Appesa Div Button
+      cardButtons.appendChild(delet);
+      cardButtons.appendChild(modify);
+      cardButtons.appendChild(playedStat);
+      cardButtons.appendChild(badge);
+      // Appesa Div Scritte
+      cardText.appendChild(title);
+      cardText.appendChild(info);
+      // Appesa Div nei Div
+      cardContainer.appendChild(cardText);
+      cardContainer.appendChild(cardButtons);
+      // Appesa Div alla Section
+      listaSezione.appendChild(cardContainer);
+   }
 
 
 

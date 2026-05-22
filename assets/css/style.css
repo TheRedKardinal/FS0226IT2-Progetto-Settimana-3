@@ -300,12 +300,8 @@ body.darkMode section {
     color: lightslategray;
 }
 
-ul {
-    list-style: none;
-    margin: 20px
-}
 
-li {
+.lista div:first {
     background-color: rgba(217, 217, 178, 0.239);
     border: 1px solid lightgray;
     border-radius: 6px;
@@ -315,11 +311,3 @@ li {
     width: 100%;
 }
 
-li h4 {
-    margin-top: 10px;
-    margin-left: 20px;
-}
-
-li p {
-    margin-left: 20px;
-}
