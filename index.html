@@ -1,50 +1,68 @@
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Week Project — Settimana III</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week Project — Settimana III</title>
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body>
 
-  <header>
-    <!-- Titolo dell'app + sottotitolo + button tema chiaro/scuro -->
-     <div>
-     <h1>La mia bookshelf</h1>
-     <p>Aggiungi i libri che hai letto o che vuoi leggere</p>
-     </div>
-     <div>
-        <button>TEMA SCURO</button>
-     </div>
-  </header>
+    <header>
+        <!-- Titolo dell'app + sottotitolo + button tema chiaro/scuro -->
+        <div>
+            <h1>Videogame List</h1>
+            <p>Aggiungi i libri che hai letto o che vuoi leggere</p>
+        </div>
+        <div>
+            <button>Tema Scuro</button>
+        </div>
+    </header>
 
-  <main>
+    <main>
 
-    <section class="form">
-      <!-- Form di inserimento di nuovi elementi -->
-    </section>
+        <section class="form">
+            <!-- Form di inserimento di nuovi elementi -->
+            <div>
+                <h4>Aggiungi un gioco</h4>
+                <form>
+                    <input type="text" id="title" placeholder="Titolo" />
+                    <input type="text" id="console" placeholder="Console" />
+                    <input type="text" id="year" placeholder="Anno" />
+                    <select name="filterList" id="filterList">
+                        <option value="" selected></option>
+                        <option value="daGiocare">&nbsp;&nbsp;Da giocare</option>
+                        <option value="giocato">&nbsp;&nbsp;Giocato</option>
+                        <option value="tutti">&nbsp;&nbsp;Tutti</option>
+                    </select>
+                    <button type="submit">Aggiungi</button>
+                </form>
+            </div>
+        </section>
 
-    <section class="controlli">
-      <!-- Ricerca live, filtro (select), ordinamento -->
-    </section>
+        <section class="controlli">
+            <!-- Ricerca live, filtro (select), ordinamento -->
+        </section>
 
-    <section class="statistiche">
-      <!-- Conteggi e/o barre orizzontali -->
-    </section>
+        <section class="statistiche">
+            <!-- Conteggi e/o barre orizzontali -->
+        </section>
 
-    <section class="lista">
-      <!-- Container che render() ricostruisce a ogni cambio di stato -->
-    </section>
+        <section class="lista">
+            <!-- Container che render() ricostruisce a ogni cambio di stato -->
+        </section>
 
-    <div id="notifica"></div>
+        <div id="notifica"></div>
 
-  </main>
+    </main>
 
-  <footer>
-    <!-- Autore, anno -->
-  </footer>
+    <footer>
+        <!-- Autore, anno -->
+    </footer>
 
-  <script src="script.js"></script>
+    <script src="assets/js/script.js"></script>
 </body>
+
 </html>
