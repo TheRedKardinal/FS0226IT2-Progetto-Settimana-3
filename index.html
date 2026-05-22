@@ -17,7 +17,7 @@
             <p>Aggiungi i libri che hai letto o che vuoi leggere</p>
         </div>
         <div>
-            <button>Tema Scuro</button>
+            <button id="darkModeTog">Tema Scuro</button>
         </div>
     </header>
 
@@ -30,7 +30,7 @@
                 <form>
                     <input type="text" id="title" placeholder="Titolo" />
                     <input type="text" id="console" placeholder="Console" />
-                    <input type="text" id="year" placeholder="Anno" />
+                    <input type="number" id="year" min="1900" max="2100" placeholder="Anno" />
                     <select name="filterList" id="filterList">
                         <option value="" selected></option>
                         <option value="daGiocare">&nbsp;&nbsp;Da giocare</option>
@@ -44,14 +44,59 @@
 
         <section class="controlli">
             <!-- Ricerca live, filtro (select), ordinamento -->
+            <div>
+                <form>
+                    <input type="text" id="search" placeholder="Cerca per titolo o console" />
+                    <select name="filterSearch" id="filterSearch">
+                        <option value="" selected></option>
+                        <option value="daGiocare">&nbsp;&nbsp;Da giocare</option>
+                        <option value="giocato">&nbsp;&nbsp;Giocato</option>
+                        <option value="tutti">&nbsp;&nbsp;Tutti</option>
+                    </select>
+                    <select name="yearSearch" id="yearSearch">
+                        <option value=""></option>
+                        <option value="yearCresc">&nbsp;&nbsp;Anno crescente</option>
+                        <option value="YearDec">&nbsp;&nbsp;Anno decrescente</option>
+                    </select>
+                </form>
+            </div>
         </section>
 
         <section class="statistiche">
             <!-- Conteggi e/o barre orizzontali -->
+            <div>
+                <div class="total">
+                    <span>1</span>
+                    <p>Totale</p>
+                </div>
+
+                <div class="played">
+                    <span>1</span>
+                    <p>Letti</p>
+                </div>
+
+                <div class="toPlay">
+                    <span>1</span>
+                    <p>Da leggere</p>
+                </div>
+
+                <div class="barBox">
+                    <div class="barDiv">
+                        <div class="bar"></div>
+                    </div>
+                    <p>Percentuale letti</p>
+                </div>
+
+            </div>
         </section>
 
         <section class="lista">
             <!-- Container che render() ricostruisce a ogni cambio di stato -->
+            <div>
+                <table>
+                    
+                </table>
+            </div>
         </section>
 
         <div id="notifica"></div>

@@ -83,7 +83,12 @@ REGOLE
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+const darkMode = document.querySelector('#darkModeTog');
+const body = document.body;
 
+darkMode.addEventListener('click', (e) => {
+    document.body.classList.toggle('darkMode');
+});
 
 /* PERSISTENZA — localStorage (cerca tu su MDN)
    - In fondo a render(), salva lo stato:
