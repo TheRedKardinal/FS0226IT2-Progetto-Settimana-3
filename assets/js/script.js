@@ -21,6 +21,33 @@ REGOLE
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+const videogiochi = [
+    {
+        id: 0,
+        name: 'God of War III',
+        console: 'PlayStation',
+        year: 2010
+    },
+    {
+        id: 1,
+        name: 'MegaMan X4',
+        console: 'Multipiattaforma',
+        year: 1997
+    },
+    {
+        id: 2,
+        name: 'Metal Gear Solid 3 - Snake Eaeter',
+        console: 'PlayStation 2',
+        year: 2004
+    },
+    {
+        id: 3,
+        name: 'Monster Hunter World',
+        console: 'Multipiattaforma',
+        year: 2018
+    },
+];
+
 
 
 /* RENDER()
@@ -88,6 +115,11 @@ const body = document.body;
 
 darkMode.addEventListener('click', (e) => {
     document.body.classList.toggle('darkMode');
+    if (body.classList.contains('darkMode')) {
+        darkMode.textContent = 'Tema scuro';
+    } else {
+        darkMode.textContent = 'Tema chiaro';
+    };
 });
 
 /* PERSISTENZA — localStorage (cerca tu su MDN)
@@ -142,3 +174,5 @@ darkMode.addEventListener('click', (e) => {
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+
+

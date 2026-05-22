@@ -32,7 +32,7 @@
                     <input type="text" id="console" placeholder="Console" />
                     <input type="number" id="year" min="1900" max="2100" placeholder="Anno" />
                     <select name="filterList" id="filterList">
-                        <option value="" selected></option>
+                        <option value="" selected>Seleziona</option>
                         <option value="daGiocare">&nbsp;&nbsp;Da giocare</option>
                         <option value="giocato">&nbsp;&nbsp;Giocato</option>
                         <option value="tutti">&nbsp;&nbsp;Tutti</option>
@@ -48,13 +48,15 @@
                 <form>
                     <input type="text" id="search" placeholder="Cerca per titolo o console" />
                     <select name="filterSearch" id="filterSearch">
-                        <option value="" selected></option>
+                        <option value="" selected>Seleziona</option>
                         <option value="daGiocare">&nbsp;&nbsp;Da giocare</option>
                         <option value="giocato">&nbsp;&nbsp;Giocato</option>
                         <option value="tutti">&nbsp;&nbsp;Tutti</option>
                     </select>
                     <select name="yearSearch" id="yearSearch">
-                        <option value=""></option>
+                        <option value="">Seleziona</option>
+                        <option value="aZ">&nbsp;&nbsp;A -> Z</option>
+                        <option value="zA">&nbsp;&nbsp;Z &lt;- A </option>
                         <option value="yearCresc">&nbsp;&nbsp;Anno crescente</option>
                         <option value="YearDec">&nbsp;&nbsp;Anno decrescente</option>
                     </select>
@@ -66,17 +68,17 @@
             <!-- Conteggi e/o barre orizzontali -->
             <div>
                 <div class="total">
-                    <span>1</span>
+                    <span>0</span>
                     <p>Totale</p>
                 </div>
 
                 <div class="played">
-                    <span>1</span>
+                    <span>0</span>
                     <p>Letti</p>
                 </div>
 
                 <div class="toPlay">
-                    <span>1</span>
+                    <span>0</span>
                     <p>Da leggere</p>
                 </div>
 
@@ -93,9 +95,7 @@
         <section class="lista">
             <!-- Container che render() ricostruisce a ogni cambio di stato -->
             <div>
-                <table>
-                    
-                </table>
+                <ul id="gamesList"><li><h4>Salve</h4><p>Hello</p></li></ul>
             </div>
         </section>
 
