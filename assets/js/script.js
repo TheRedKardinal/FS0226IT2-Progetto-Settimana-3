@@ -22,30 +22,30 @@ REGOLE
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 const videogiochi = [
-    {
-        id: 0,
-        name: 'God of War III',
-        console: 'PlayStation',
-        year: 2010
-    },
-    {
-        id: 1,
-        name: 'MegaMan X4',
-        console: 'Multipiattaforma',
-        year: 1997
-    },
-    {
-        id: 2,
-        name: 'Metal Gear Solid 3 - Snake Eaeter',
-        console: 'PlayStation 2',
-        year: 2004
-    },
-    {
-        id: 3,
-        name: 'Monster Hunter World',
-        console: 'Multipiattaforma',
-        year: 2018
-    },
+   {
+      id: 0,
+      name: 'God of War III',
+      console: 'PlayStation',
+      category: 'Azione e Avventura'
+   },
+   {
+      id: 1,
+      name: 'MegaMan X4',
+      console: 'Multipiattaforma',
+      category: 'Azione e Avventura'
+   },
+   {
+      id: 2,
+      name: 'Metal Gear Solid 3 - Snake Eaeter',
+      console: 'PlayStation 2',
+      category: 'Stealth'
+   },
+   {
+      id: 3,
+      name: 'Monster Hunter World',
+      console: 'Multipiattaforma',
+      category: 'Gioco di Ruolo'
+   },
 ];
 
 
@@ -62,7 +62,44 @@ const videogiochi = [
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+const renderLista = function () {
+   videogameList.querySelector('.lista');
+   videogameList.innerHTML = '';
+   // Div Container
+   const cardContainer = document.createElement('div');
+   // Contenuto card - Scritte
+   const cardText = document.createElement('div'); // Appeso
+   const title = document.createElement('h4'); // Appeso
+   const info = document.createElement('p'); // Appeso
+   // Contenuto card - Bottoni
+   const cardButtons = document.createElement('div'); // Appeso
+   const badge = document.createElement('span'); // Appeso
+   const playedStat = document.createElement('button'); // Appeso
+   const modify = document.createElement('button'); // Appeso
+   const delet = document.createElement('button'); // Appeso
 
+   // Appesa Div Button
+   cardButtons.appendChild(delet);
+   cardButtons.appendChild(modify);
+   cardButtons.appendChild(playedStat);
+   cardButtons.appendChild(badge);
+   // Appesa Div Scritte
+   cardText.appendChild(title);
+   cardText.appendChild(info);
+   // Appesa Div nei Div
+   cardContainer.appendChild(cardText);
+   cardContainer.appendChild(cardButtons);
+   // Appesa Div alla Section
+   listaSezione.appendChild(cardContainer);
+
+
+
+
+
+
+
+
+}
 
 /* FORM CON VALIDAZIONE
    addEventListener("submit") sul form.
@@ -114,12 +151,12 @@ const darkMode = document.querySelector('#darkModeTog');
 const body = document.body;
 
 darkMode.addEventListener('click', (e) => {
-    document.body.classList.toggle('darkMode');
-    if (body.classList.contains('darkMode')) {
-        darkMode.textContent = 'Tema scuro';
-    } else {
-        darkMode.textContent = 'Tema chiaro';
-    };
+   document.body.classList.toggle('darkMode');
+   if (body.classList.contains('darkMode')) {
+      darkMode.textContent = 'Tema scuro';
+   } else {
+      darkMode.textContent = 'Tema chiaro';
+   };
 });
 
 /* PERSISTENZA — localStorage (cerca tu su MDN)

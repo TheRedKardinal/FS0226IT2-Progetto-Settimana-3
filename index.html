@@ -30,13 +30,26 @@
                 <form>
                     <input type="text" id="title" placeholder="Titolo" />
                     <input type="text" id="console" placeholder="Console" />
-                    <input type="number" id="year" min="1900" max="2100" placeholder="Anno" />
+
+                    <select name="categories" id="categories">
+                        <option value="" selected>Seleziona</option>
+                        <option value="actionAdventure">&nbsp;&nbsp;Azione e Avventura</option>
+                        <option value="fighting">&nbsp;&nbsp;Picchiaduro</option>
+                        <option value="beatEmUp">&nbsp;&nbsp;A scorrimento</option>
+                        <option value="stealth">&nbsp;&nbsp;Stealth</option>
+                        <option value="fpsTps">&nbsp;&nbsp;Sparatutto (FPS/TPS)</option>
+                        <option value="gdr">&nbsp;&nbsp;Giochi di Ruolo</option>
+                        <option value="strategy">&nbsp;&nbsp;Strategia</option>
+                        <option value="sport">&nbsp;&nbsp;Simulazione e Sport</option>
+                    </select>
+
                     <select name="filterList" id="filterList">
                         <option value="" selected>Seleziona</option>
                         <option value="daGiocare">&nbsp;&nbsp;Da giocare</option>
                         <option value="giocato">&nbsp;&nbsp;Giocato</option>
                         <option value="tutti">&nbsp;&nbsp;Tutti</option>
                     </select>
+                    
                     <button type="submit">Aggiungi</button>
                 </form>
             </div>
@@ -94,9 +107,6 @@
 
         <section class="lista">
             <!-- Container che render() ricostruisce a ogni cambio di stato -->
-            <div>
-                <ul id="gamesList"><li><h4>Salve</h4><p>Hello</p></li></ul>
-            </div>
         </section>
 
         <div id="notifica"></div>
