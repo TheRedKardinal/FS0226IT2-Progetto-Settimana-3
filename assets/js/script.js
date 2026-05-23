@@ -53,7 +53,6 @@ let videogiochi = [
 ];
 
 // Sposto qui su le variabili perché non venivano trovate prima di rendeLista()
-let giochiFiltrati = videogiochi;
 let campoDiRicerca = "";
 const ricerca = document.querySelector('.controlli input[type="text"]');
 
@@ -72,7 +71,8 @@ const ricerca = document.querySelector('.controlli input[type="text"]');
 const renderLista = function () {
    const videogameList = document.querySelector('.lista');
    videogameList.innerHTML = '';
-
+   // Array temporaneo per i filtri qui
+   let giochiFiltrati = videogiochi;
    //Torniamo qui a intercettari i caratteri digitati nel campo di ricerca
 
    // Se campo di ricerca è diverso da una stringa vuota
