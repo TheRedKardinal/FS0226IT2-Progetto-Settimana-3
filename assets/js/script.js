@@ -179,7 +179,7 @@ modificaLista.addEventListener('click', (e) => {
    } else if (e.target.textContent === 'Modifica') {
       const gameToModify = Number(e.target.dataset.id);
       const thisGame = videogiochi.find((gioco) => {
-         return gioco.id = gameToModify;
+         return gioco.id === gameToModify;
       });
       // Localizzo card e titolo
       const cardCliccata = e.target.closest('.card-gioco');
@@ -189,6 +189,24 @@ modificaLista.addEventListener('click', (e) => {
       // Il valore dell'input mago diventa il valore di thisGame (che in questa funzione equivale all'array videogiochi)
       inputMage.value = thisGame.name;
       titoloH4.replaceWith(inputMage);
+      // Salvataggio nuovo titolo
+      inputMage.addEventListener('blur', (e) => {
+         const newTitle = inputMage.value.trim();
+         // Hai scritto o ti sei dimenticato?
+         if (newTitle !== '') {
+            thisGame.name = newTitle;
+         } else {
+            alert('Attenzione: compila il campo di titolo');
+         }
+
+         renderLista();
+      });
+      // E se premo invio?
+      inputMage.addEventListener('keyup', (e) => {
+         if (e.key === 'Enter') {
+            inputMage.blur();
+         }
+      });
    }
 });
 
