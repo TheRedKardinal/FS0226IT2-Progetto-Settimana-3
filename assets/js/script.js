@@ -168,14 +168,28 @@ addGames.addEventListener('submit', (e) => {
 const modificaLista = document.querySelector('.lista');
 // Intercetto bottone
 modificaLista.addEventListener('click', (e) => {
-// Se il bottone che hai cliccato è "Elimina"?
-if(e.target.textContent === 'Elimina') {
-   const gameToDelete = Number(e.target.dataset.id);
-   videogiochi = videogiochi.filter((gioco) => {
-      return gioco.id !== gameToDelete;
-   })
-   renderLista();
-};
+   // Se il bottone che hai cliccato è "Elimina"?
+   if (e.target.textContent === 'Elimina') {
+      const gameToDelete = Number(e.target.dataset.id);
+      videogiochi = videogiochi.filter((gioco) => {
+         return gioco.id !== gameToDelete;
+      })
+      renderLista();
+      // e se invce hai cliccato "Modifica"?
+   } else if (e.target.textContent === 'Modifica') {
+      const gameToModify = Number(e.target.dataset.id);
+      const thisGame = videogiochi.find((gioco) => {
+         return gioco.id = gameToModify;
+      });
+      // Localizzo card e titolo
+      const cardCliccata = e.target.closest('.card-gioco');
+      const titoloH4 = cardCliccata.querySelector('h4');
+      // Bisogna creare un input volante che permetta di scrivere sul titolo
+      const inputMage = document.createElement('input');
+      // Il valore dell'input mago diventa il valore di thisGame (che in questa funzione equivale all'array videogiochi)
+      inputMage.value = thisGame.name;
+      titoloH4.replaceWith(inputMage);
+   }
 });
 
 /* RICERCA, FILTRO, ORDINAMENTO
