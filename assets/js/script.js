@@ -82,7 +82,14 @@ const renderLista = function () {
    // Da giocare
    const toPlay = totaleGiochi - played;
    // Iniezione contatore
-   
+   const spanTotaleGiochi = document.querySelector('.total span');
+   const spanPlayed = document.querySelector('.played span');
+   const spanToPlay = document.querySelector('.toPlay span');
+
+   spanTotaleGiochi.textContent = totaleGiochi;
+   spanPlayed.textContent = played;
+   spanToPlay.textContent = toPlay;
+
 
    // Dichiaro forEach 
    videogiochi.forEach(function (gioco) {
