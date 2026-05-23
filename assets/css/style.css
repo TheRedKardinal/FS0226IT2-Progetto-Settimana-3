@@ -118,6 +118,10 @@ body.darkMode section {
     background-color: rgba(47, 45, 45, 0.881);
 }
 
+body.darkMode footer {
+    background: black;
+    border-top: 2px solid #333;
+}
 /* FINE DARK MODE */
 
 /* SECTION DI AGGIUNTA */
@@ -298,11 +302,13 @@ body.darkMode section {
 /* INIZIO LISTA */
 .lista {
     margin: 0 150px auto;
+    margin-bottom: 20px;
     background-color: white;
     border: 1px solid lightgray;
     border-radius: 7px;
     color: lightslategray;
     text-align: center;
+    padding-bottom: 20px;
 }
 
 
@@ -361,4 +367,22 @@ body.darkMode section {
 
 .card-gioco button:nth-child(2) {
     margin-right: 8px;
+}
+
+/* FOOTER */
+footer {
+    background: #520606;
+    background: linear-gradient(200deg, rgba(82, 6, 6, 1) 0%, rgba(217, 22, 22, 1) 50%, rgba(222, 31, 18, 1) 100%);
+    height: 80px;
+    text-align: left;
+}
+
+footer h5 {
+    margin-left: 25px;
+    padding-top: 20px;
+}
+
+footer p {
+    margin-left: 25px;
+    font-size: 0.8rem;
 }

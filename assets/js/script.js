@@ -70,6 +70,10 @@ const renderLista = function () {
    const videogameList = document.querySelector('.lista');
    videogameList.innerHTML = '';
 
+   // Torniamo qui a mettere i conteggi dinamici
+   const totaleGiochi = videogiochi[i].length;
+   const played = videogiochi.isPlayed.true;
+
    // Dichiaro forEach 
    videogiochi.forEach(function (gioco) {
       // Creazione Card
