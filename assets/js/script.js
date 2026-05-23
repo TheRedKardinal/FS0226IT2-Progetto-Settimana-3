@@ -52,7 +52,10 @@ let videogiochi = [
    },
 ];
 
-
+// Sposto qui su le variabili perché non venivano trovate prima di rendeLista()
+let giochiFiltrati = videogiochi;
+let campoDiRicerca = "";
+const ricerca = document.querySelector('.controlli input[type="text"]');
 
 /* RENDER()
    Una sola funzione che ridipinge la lista. A ogni chiamata:
@@ -71,7 +74,7 @@ const renderLista = function () {
    videogameList.innerHTML = '';
 
    //Torniamo qui a intercettari i caratteri digitati nel campo di ricerca
-   let giochiFiltrati = videogiochi;
+
    // Se campo di ricerca è diverso da una stringa vuota
    // allora giochiFiltrati (che sarebbe l'array temporaneo di videogiochi)
    // è uguale all'array filtrato, che filtra i nomi tutti in minuscolo
@@ -254,10 +257,7 @@ modificaLista.addEventListener('click', (e) => {
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-const ricerca = document.querySelector('.controlli input[type="text"]');
-// campo di ricerca sempre vuoto 
-let campoDiRicerca = "";
-
+// Orecchio al campo input di ricerca
 ricerca.addEventListener('input', (e) => {
    campoDiRicerca = e.target.value.toLowerCase().trim();
    renderLista();
