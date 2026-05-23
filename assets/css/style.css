@@ -156,7 +156,7 @@ body.darkMode section {
 
 
 .form input {
-    width: 24%;
+    width: 23%;
     margin-bottom: 10px;
     margin-right: 7px;
 }
@@ -255,31 +255,35 @@ body.darkMode section {
     text-align: center;
     padding: 10px 0;
     display: inline-block;
-    margin: 10px 15px 10px 0;
+    margin: 10px 40px 10px 0;
     text-align: left;
 }
 
-.statistiche div:first-child {
+.statistiche>div:first-child {
     margin: 0 20px auto;
 }
 
 .barBox {
-    width: 80%;
+    margin-left: 80px;
+    width: 70%;
     display: inline-block;
 }
 
 .barDiv {
+    margin: 0;
     border: 1px solid black;
     border-radius: 20px;
     padding: 0;
     width: 100%;
     color: lightslategray;
-    background-color: #cd0707;
+    background-color: rgba(215, 202, 202, 0.591);
+    overflow: hidden;
 }
 
 .bar {
-    color: white;
-    width: 100%;
+    margin: 0;
+    background-color: #cd0707;
+    width: 50%;
     height: 12px;
 }
 
@@ -304,7 +308,7 @@ body.darkMode section {
 
 .card-gioco {
     margin: 20px 20px auto;
-    padding-top: 20px;
+
     display: inline-block;
     background-color: rgba(217, 217, 178, 0.239);
     border: 1px solid lightgray;
@@ -314,30 +318,47 @@ body.darkMode section {
     text-align: left;
     display: inline-block;
     width: 95%;
+    position: relative;
 }
 
 .card-gioco div:first-child {
     text-align: left;
     margin-left: 20px;
+    padding: 20px;
 }
 
 .card-gioco div:last-child {
     text-align: right;
-    vertical-align: middle;
-    margin-right: 20px;
+    padding-left: 20px;
+    position: absolute;
+    right: 20px;
+    top: 35%;
+}
+
+.card-gioco h4 {
+    color: black;
+}
+
+.card-gioco p {
+    font-size: 0.8rem;
+    color: lightslategray;
 }
 
 .card-gioco button {
-    background-color: rgb(147, 7, 7);
+    background-color: rgba(147, 7, 7, 0.511);
     border: 0.8px solid black;
-    border-radius: 4px;
-    box-shadow: 0 1px 1px 0.2px black;
-    width: 5%;
+    border-radius: 6px;
+    box-shadow: 0.2px 1px 2px 0.2px black;
     text-align: center;
     font-size: 0.8rem;
     display: inline-block;
+    padding: 3px;
 }
 
-.card-gioco button:first-child {
-    margin-right: 60px;
+.card-gioco button:nth-child(3) {
+    margin-right: 8px;
+}
+
+.card-gioco button:nth-child(2) {
+    margin-right: 8px;
 }

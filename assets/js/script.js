@@ -21,26 +21,30 @@ REGOLE
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-const videogiochi = [
+let videogiochi = [
    {
+      id: Date.now(),
       name: 'God of War III',
       console: 'PlayStation',
       category: 'Azione e Avventura',
       isPlayed: 'true'
    },
    {
+      id: Date.now(),
       name: 'MegaMan X4',
       console: 'Multipiattaforma',
       category: 'Azione e Avventura',
       isPlayed: 'true'
    },
    {
+      id: Date.now(),
       name: 'Metal Gear Solid 3 - Snake Eaeter',
       console: 'PlayStation 2',
       category: 'Stealth',
       isPlayed: 'true'
    },
    {
+      id: Date.now(),
       name: 'Monster Hunter World',
       console: 'Multipiattaforma',
       category: 'Gioco di Ruolo',
@@ -89,7 +93,7 @@ const renderLista = function () {
 
       // Proprietà da incollare
       title.textContent = gioco.name;
-      info.textContent = gioco.console + '-' + gioco.category;
+      info.textContent = gioco.console + ' - ' + gioco.category;
       modify.textContent = 'Modifica';
       delet.textContent = 'Elimina';
 
@@ -108,15 +112,8 @@ const renderLista = function () {
       // Appesa Div alla Section
       videogameList.appendChild(cardContainer);
    });
-
-
-
-
-
-
-
-
 }
+
 renderLista();
 /* FORM CON VALIDAZIONE
    addEventListener("submit") sul form.
@@ -128,7 +125,33 @@ renderLista();
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-
+const addGames = document.querySelector('.form form');
+// Blocco evento predefinito
+addGames.addEventListener('submit', (e) => {
+   e.preventDefault();
+   // iniziamo a prendere i dati dal form
+   const title = document.querySelector('#title').value.trim();
+   const consoleValue = document.querySelector('#console').value.trim();
+   const category = document.querySelector('#categories').value.trim();
+   // Errore
+   if (title === '' || consoleValue === '' || category === '') {
+      alert('"Attenzione: compila tutti i campi prima di aggiungere un gioco!"');
+      return;
+   }
+   // Bimbo nuovo
+   const nuovoGioco = {
+      id: Date.now(),
+      name: title,
+      console: consoleValue,
+      category: category,
+      isPlayed: false,
+   };
+   // Innesto bimbo nuovo e render
+   videogiochi.push(nuovoGioco);
+   renderLista();
+   // Svuota form
+   addGames.reset();
+});
 
 /* INTERAZIONI BASE — eliminare, modificare, contare
    - Elimina: filter per id, render(). Event delegation sul container.
