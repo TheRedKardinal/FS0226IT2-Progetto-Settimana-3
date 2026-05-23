@@ -71,8 +71,18 @@ const renderLista = function () {
    videogameList.innerHTML = '';
 
    // Torniamo qui a mettere i conteggi dinamici
-   const totaleGiochi = videogiochi[i].length;
-   const played = videogiochi.isPlayed.true;
+   // Totale Giochi
+   const totaleGiochi = videogiochi.length;
+   // Giocati
+   const playedGames = videogiochi.filter((gioco) => {
+      return gioco.isPlayed === true;
+   });
+
+   const played = playedGames.length;
+   // Da giocare
+   const toPlay = totaleGiochi - played;
+   // Iniezione contatore
+   
 
    // Dichiaro forEach 
    videogiochi.forEach(function (gioco) {
