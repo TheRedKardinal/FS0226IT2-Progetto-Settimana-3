@@ -23,32 +23,32 @@ REGOLE
 /* SCRIVI QUI LA TUA RISPOSTA */
 let videogiochi = [
    {
-      id: Date.now(),
+      id: 0,
       name: 'God of War III',
       console: 'PlayStation',
       category: 'Azione e Avventura',
-      isPlayed: 'true'
+      isPlayed: true
    },
    {
-      id: Date.now(),
+      id: 1,
       name: 'MegaMan X4',
       console: 'Multipiattaforma',
       category: 'Azione e Avventura',
-      isPlayed: 'true'
+      isPlayed: true
    },
    {
-      id: Date.now(),
+      id: 2,
       name: 'Metal Gear Solid 3 - Snake Eaeter',
       console: 'PlayStation 2',
       category: 'Stealth',
-      isPlayed: 'true'
+      isPlayed: true
    },
    {
-      id: Date.now(),
+      id: 3,
       name: 'Monster Hunter World',
       console: 'Multipiattaforma',
       category: 'Gioco di Ruolo',
-      isPlayed: 'true'
+      isPlayed: true
    },
 ];
 
@@ -97,6 +97,10 @@ const renderLista = function () {
       modify.textContent = 'Modifica';
       delet.textContent = 'Elimina';
 
+      // ID ai bottoni
+      delet.dataset.id = gioco.id;
+      modify.dataset.id = gioco.id;
+      playedStat.dataset.id = gioco.id;
       // Appesa Div Button
       cardButtons.appendChild(badge);
       cardButtons.appendChild(playedStat);
@@ -161,7 +165,18 @@ addGames.addEventListener('submit', (e) => {
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-
+const modificaLista = document.querySelector('.lista');
+// Intercetto bottone
+modificaLista.addEventListener('click', (e) => {
+// Se il bottone che hai cliccato è "Elimina"?
+if(e.target.textContent === 'Elimina') {
+   const gameToDelete = Number(e.target.dataset.id);
+   videogiochi = videogiochi.filter((gioco) => {
+      return gioco.id !== gameToDelete;
+   })
+   renderLista();
+};
+});
 
 /* RICERCA, FILTRO, ORDINAMENTO
    - Ricerca live: <input> con event "input". Salva in stato e render().
