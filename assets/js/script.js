@@ -70,6 +70,19 @@ const renderLista = function () {
    const videogameList = document.querySelector('.lista');
    videogameList.innerHTML = '';
 
+   //Torniamo qui a intercettari i caratteri digitati nel campo di ricerca
+   let giochiFiltrati = videogiochi;
+   // Se campo di ricerca è diverso da una stringa vuota
+   // allora giochiFiltrati (che sarebbe l'array temporaneo di videogiochi)
+   // è uguale all'array filtrato, che filtra i nomi tutti in minuscolo
+   // e se il nome in minuscolo concide con il valore dell'input, allora ritorna vero
+   if (campoDiRicerca !== "") {
+      giochiFiltrati = giochiFiltrati.filter((gioco) => {
+         const nomeMinuscolo = gioco.name.toLocaleLowerCase();
+         return nomeMinuscolo.includes(campoDiRicerca);
+      });
+   };
+
    // Torniamo qui a mettere i conteggi dinamici
    // Totale Giochi
    const totaleGiochi = videogiochi.length;
@@ -91,8 +104,10 @@ const renderLista = function () {
    spanToPlay.textContent = toPlay;
 
 
-   // Dichiaro forEach 
-   videogiochi.forEach(function (gioco) {
+   // Dichiaro forEach -> Modifico con giochiFiltrati per utilizzare
+   // il filtro ma visualizzando comunque tutti i videogiochi quando non cerco
+   // perché giochiFiltrati è uguale a videogiochi
+   giochiFiltrati.forEach(function (gioco) {
       // Creazione Card
       // Div Container
       const cardContainer = document.createElement('div');
@@ -239,7 +254,14 @@ modificaLista.addEventListener('click', (e) => {
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+const ricerca = document.querySelector('.controlli input[type="text"]');
+// campo di ricerca sempre vuoto 
+let campoDiRicerca = "";
 
+ricerca.addEventListener('input', (e) => {
+   campoDiRicerca = e.target.value.toLowerCase().trim();
+   renderLista();
+});
 
 /* NOTIFICHE TEMPORANEE
    Funzione notifica(testo) che imposta il testo del <div id="notifica">,
