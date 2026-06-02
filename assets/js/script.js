@@ -53,8 +53,17 @@ let videogiochi = [
 ];
 
 // Sposto qui su le variabili perché non venivano trovate prima di rendeLista()
+// ***** Barra di ricerca
 let campoDiRicerca = "";
 const ricerca = document.querySelector('.controlli input[type="text"]');
+// ***** Select giocato
+let filtroIsPlayed = "";
+const isPlayedSearch = document.querySelector('#isPlayedSearch');
+// ***** Select categoria
+let filtroCategory = "";
+const categorySelecet = document.querySelector('#categorySearch');
+// ***** Notifica
+const notifica = document.querySelector('#notifica');
 
 /* RENDER()
    Una sola funzione che ridipinge la lista. A ogni chiamata:
@@ -85,6 +94,43 @@ const renderLista = function () {
          return nomeMinuscolo.includes(campoDiRicerca);
       });
    };
+
+   // ***** select filtro giocato
+   if (filtroIsPlayed === 'giocato') {
+      giochiFiltrati = giochiFiltrati.filter((gioco) => {
+         return gioco.isPlayed === true;
+      })
+   }
+
+   if (filtroIsPlayed === 'daGiocare') {
+      giochiFiltrati = giochiFiltrati.filter((gioco) => {
+         return gioco.isPlayed === false;
+      })
+   }
+
+   // ***** filtro categoria - Se il filtro selezionato è diverso da tutte e da vuoto
+   if (filtroCategory !== 'tutte' && filtroCategory !== 'aZ' && filtroCategory !== 'zA' && filtroCategory !== '') {
+
+      // Filtriamo l'array e lo riassegniamo a se stesso
+      giochiFiltrati = giochiFiltrati.filter((gioco) => {
+         return gioco.category === filtroCategory;
+      });
+   }
+
+   // Ordinamento nel selettore
+   if (filtroCategory === 'aZ') {
+      giochiFiltrati.sort((a, b) => {
+         return a.name.localeCompare(b.name);
+      });
+   }
+
+      if (filtroCategory === 'zA') {
+      giochiFiltrati.sort((a, b) => {
+         return b.name.localeCompare(a.name);
+      });
+   }
+
+
 
    // Torniamo qui a mettere i conteggi dinamici
    // Totale Giochi
@@ -262,6 +308,18 @@ ricerca.addEventListener('input', (e) => {
    campoDiRicerca = e.target.value.toLowerCase().trim();
    renderLista();
 });
+
+isPlayedSearch.addEventListener('change', (e) => {
+   filtroIsPlayed = e.target.value;
+   renderLista();
+})
+
+categorySelecet.addEventListener('change', (e) => {
+   filtroCategory = e.target.value;
+   renderLista();
+})
+
+
 
 /* NOTIFICHE TEMPORANEE
    Funzione notifica(testo) che imposta il testo del <div id="notifica">,

@@ -13,8 +13,15 @@ body {
     background: rgba(217, 217, 178, 0.239);
 }
 
+section {
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
 img {
     max-width: 100%;
+    height: auto;
     display: block;
 }
 
@@ -28,6 +35,12 @@ button {
     cursor: pointer;
     border: none;
     background: none;
+}
+
+input,
+select,
+button {
+    font-size: 16px;
 }
 
 /* Notifica nascosta di default */
@@ -77,9 +90,8 @@ header p {
     padding: 6px;
     padding-right: 10px;
     padding-left: 10px;
-    font-size: 0.7rem;
-    width: 110px;
-    height: 35px;
+    width: 8em;
+    height: 2em;
     cursor: pointer;
     box-shadow: 0.2px 0.2px 0.2px 0.2px black;
 }
@@ -122,12 +134,12 @@ body.darkMode footer {
     background: black;
     border-top: 2px solid #333;
 }
+
 /* FINE DARK MODE */
 
 /* SECTION DI AGGIUNTA */
 .form {
-    margin: 0 150px auto;
-    margin-bottom: 20px;
+
     background-color: white;
     border: 1px solid lightgray;
     border-radius: 7px;
@@ -135,7 +147,7 @@ body.darkMode footer {
 
 .form div {
     margin: 0 20px auto;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 
 .form h4 {
@@ -151,7 +163,7 @@ body.darkMode footer {
 .form input,
 .form select,
 .form button {
-    height: 30px;
+    height: 1.8em;
     border-radius: 5px;
     border: 1px solid lightgray;
     box-shadow: 0 0.2px 0.2px 0.2px lightgray;
@@ -168,7 +180,6 @@ body.darkMode footer {
 .form input::placeholder {
     text-align: left;
     color: lightgray;
-    padding-left: 10px;
 }
 
 #year:focus,
@@ -189,13 +200,11 @@ body.darkMode footer {
     box-shadow: 0 1px 1px 0.2px black;
     width: 7%;
     text-align: center;
-    font-size: 0.8rem;
 }
 
 /* BARRA DI RICERCA */
 .controlli {
-    margin: 0 150px auto;
-    margin-bottom: 20px;
+
     background-color: white;
     border: 1px solid lightgray;
     border-radius: 7px;
@@ -245,8 +254,7 @@ body.darkMode footer {
 
 /* STATISTICHE */
 .statistiche {
-    margin: 0 150px auto;
-    margin-bottom: 20px;
+    position: relative;
     background-color: white;
     border: 1px solid lightgray;
     border-radius: 7px;
@@ -268,7 +276,8 @@ body.darkMode footer {
 }
 
 .barBox {
-    margin-left: 80px;
+    position: absolute;
+    top: 45%;
     width: 70%;
     display: inline-block;
 }
@@ -301,8 +310,7 @@ body.darkMode footer {
 
 /* INIZIO LISTA */
 .lista {
-    margin: 0 150px auto;
-    margin-bottom: 20px;
+
     background-color: white;
     border: 1px solid lightgray;
     border-radius: 7px;
@@ -356,7 +364,6 @@ body.darkMode footer {
     border-radius: 6px;
     box-shadow: 0.2px 1px 2px 0.2px black;
     text-align: center;
-    font-size: 0.8rem;
     display: inline-block;
     padding: 3px;
 }
@@ -373,16 +380,16 @@ body.darkMode footer {
 footer {
     background: #520606;
     background: linear-gradient(200deg, rgba(82, 6, 6, 1) 0%, rgba(217, 22, 22, 1) 50%, rgba(222, 31, 18, 1) 100%);
-    height: 80px;
     text-align: left;
 }
 
-footer h5 {
+.footer-div {
+    display: inline-block;
+    margin: 2%;
     margin-left: 25px;
-    padding-top: 20px;
+    vertical-align: middle;
 }
 
-footer p {
-    margin-left: 25px;
+.footer-div p {
     font-size: 0.8rem;
 }
